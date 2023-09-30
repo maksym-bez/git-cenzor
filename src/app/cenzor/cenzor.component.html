@@ -1,0 +1,16 @@
+<header [class]="top">{{topText}}</header>
+<main [class]="cenzor">
+    <div>
+        <span>Bad words: </span><span [class]="bad"> {{ badWords}}</span>
+    </div>
+    <input type="text" placeholder="{{placeholder}}" [class]="inputText"
+    [(ngModel)]="inputWords" [style.borderColor]="isInput! ? 'grey' :
+        'red'">
+    <input type="button" value="Add" [class]="btnAdd" (click)="addWords()">
+    <input type="button" value="Reset" [class]="btnReset" (click)="resetWords()">
+    <textarea placeholder="{{placeholderTextarea}}" [class]="textarea"
+        [style.borderColor]="isText! ? 'grey' : 'red'"
+        [(ngModel)]="textareaText"></textarea>
+    <input type="button" value="Cenzor" [class]="btnCenzor"
+        (click)="cenzorBtn()">
+</main>
