@@ -1,0 +1,89 @@
+$red: rgb(252, 19, 19);
+$grey-border: rgb(189, 181, 181);
+$grey-background: rgb(207, 201, 201);
+$blue: rgba(164, 156, 241, 0.89);
+$green: rgb(19, 150, 52);
+$dark-green: rgba(16, 100, 38, 0.884);
+$orange: rgb(255, 208, 0);
+$dark-orange: rgb(158, 129, 1);
+$white: rgb(255, 255, 255);
+section {
+  border-top: 1px solid $grey-background;
+  border-bottom: 1px solid $grey-background;
+}
+.task {
+  width: 1000px;
+  margin: 20px auto;
+  &__top {
+    font-size: 25px;
+    margin: 10px 0;
+  }
+  &__input {
+    width: 80%;
+    height: 40px;
+    margin: 20px 10px 20px 0px;
+    border-radius: 5px;
+    border: 1px solid $grey-border;
+    outline: none;
+    padding: 10px;
+    font-size: 20px;
+    &:focus {
+      border: 2px solid $blue;
+      box-shadow: 0 0 8px 0 $blue;
+    }
+  }
+  &__addBtn {
+    width: 190px;
+    height: 35px;
+    border: 1px solid $dark-green;
+    background-color: $green;
+
+    box-shadow: 4px 2px 1px 0px $dark-green;
+    border-radius: 5px;
+    color: $white;
+    font-size: 15px;
+    &:focus {
+      box-shadow: inset 1px 1px 7px 3px $dark-green;
+      box-shadow: -2px -2px 3px 1px $grey-border;
+      font-size: 14px;
+    }
+  }
+  &__change {
+    width: 80%;
+    height: 80px;
+    border-radius: 5px;
+    background-color: $grey-background;
+    display: flex;
+    justify-content: end;
+    padding: 20px;
+    margin-bottom: 30px;
+    &__input {
+      width: 190px;
+      height: 40px;
+      border-radius: 5px;
+      border: 1px solid $grey-border;
+      outline: none;
+      padding: 10px;
+      font-size: 20px;
+      &:focus {
+        border: 2px solid $blue;
+        box-shadow: 0 0 8px 0 $blue;
+      }
+    }
+    &__btn {
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-size: 15px;
+      background-color: $green;
+      border: 1px solid $dark-green;
+      box-shadow: 4px 2px 1px 0px $dark-green;
+      color: $white;
+      margin: 0 20px 0 100px;
+      &:focus {
+        box-shadow: inset 1px 1px 7px 3px $dark-green;
+        box-shadow: -2px -2px 3px 1px $grey-border;
+        font-size: 14px;
+      }
+    }
+  }
+}

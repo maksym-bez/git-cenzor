@@ -1,0 +1,102 @@
+$red: rgb(252, 19, 19);
+$grey-border: rgb(148, 144, 144);
+$grey-background: rgb(207, 201, 201);
+$blue: rgb(88, 72, 231);
+$dark-blue: rgb(27, 19, 107);
+$green: rgb(7, 114, 33);
+$dark-green: rgb(15, 53, 25);
+$orange: rgb(255, 208, 0);
+$dark-orange: rgb(158, 129, 1);
+$white: rgb(255, 255, 255);
+
+.head {
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid $grey-border;
+  text-align: center;
+  line-height: 80px;
+  font-size: 30px;
+  background-color: $grey-background;
+}
+.user {
+  width: 1200px;
+  min-height: 300px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+  &__create {
+    width: 49%;
+    min-height: 300px;
+    &__name {
+      font-size: 20px;
+      font-weight: bolder;
+      margin: 15px 0;
+    }
+    &__input {
+      width: 100%;
+      height: 40px;
+      border: 1px solid $grey-border;
+      outline: 1px solid $grey-border;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 18px;
+      &:focus {
+        border: 2px solid $blue;
+      }
+    }
+    &__btnAdd,
+    &__btnSave {
+      width: 100%;
+      height: 40px;
+      border: 1px solid $green;
+      background-color: $green;
+      border-radius: 5px;
+      color: $white;
+      margin: 25px 0;
+      font-size: 20px;
+      &:focus {
+        box-shadow: inset 0 0 8px 0 $dark-green;
+      }
+    }
+    &__btnSave {
+      border: 1px solid $blue;
+      background-color: $blue;
+      &:focus {
+        box-shadow: inset 0 0 8px 0 $dark-blue;
+      }
+    }
+  }
+  &__list {
+    width: 49%;
+    min-height: 300px;
+    &__editBtn,
+    &__deleteBtn {
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 15px;
+      background-color: $orange;
+      border: 1px solid $orange;
+      &:focus {
+        box-shadow: inset 0 0 8px 0 $dark-orange;
+      }
+    }
+    &__deleteBtn {
+      background-color: $red;
+      border: 1px solid $red;
+      color: $white;
+    }
+  }
+}
+table,
+tr,
+th {
+  margin: 35px 0 0 30px;
+  border-top: 1px solid $grey-border;
+  border-bottom: 1px solid $grey-border;
+  border-collapse: collapse;
+  padding: 20px;
+}
+.error {
+  border: 2px solid $red;
+  outline: none;
+}

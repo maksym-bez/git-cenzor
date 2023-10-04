@@ -1,0 +1,30 @@
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Task</th>
+            <th>Check</th>
+            <th>Done/In progress</th>
+            <th>Edit</th>
+            <th>Delite</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr *ngFor="let task of taskList;index as i">
+            <td>{{i+1}}</td>
+            <td class="nameTask">{{task.name}}</td>
+            <td><input type="checkbox" [checked]="task.check"
+                    (click)="checkbox(i)"></td>
+            <td *ngIf="!task.check" class="progress">In progress</td>
+            <td *ngIf="task.check" class="done">Done</td>
+            <td><input type="button" class="editBtn"
+                    (click)="editUser(i)"
+                    value="Edit" [disabled]="task.check">
+            </td>
+            <td><input type="button" class="deleteBtn"
+                    (click)="deleteUser(i)"
+                    value="Delete" [disabled]="!task.check">
+            </td>
+        </tbody>
+    </table>

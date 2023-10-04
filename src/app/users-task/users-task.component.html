@@ -1,0 +1,67 @@
+<header class="head">Angular users task</header>
+<main class="user">
+    <section class="user__create">
+        <p class="user__create__name">Login</p>
+        <input type="text" class="user__create__input"
+            [ngClass]="{'error': errorLogin}"
+            [(ngModel)]="user.login"
+            (change)="loginCheck()"
+            placeholder="Enter login">
+
+        <p class="user__create__name">Password</p>
+        <input type="text" class="user__create__input"
+            [ngClass]="{'error': errorPass }"
+            [(ngModel)]="user.pass"
+            (change)="passCheck()"
+            placeholder="Enter password">
+
+        <p class="user__create__name">Email address</p>
+        <input type="text" class="user__create__input"
+            [ngClass]="{'error':errorEmail }"
+            [(ngModel)]="user.email"
+            (change)="emailCheck()"
+            placeholder="Enter email">
+
+        <input *ngIf="!statusBtn" type="button" 
+            class="user__create__btnAdd"
+            (click)="addUser()"
+            value="Add user">
+
+        <input *ngIf="statusBtn" type="button"
+            class="user__create__btnSave"
+            (click)="saveEditUser()"
+            value="Save edit user">
+    </section>
+    <section class="user__list">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Login</th>
+                    <th>Password</th>
+                    <th>Email</th>
+                    <th>Edit</th>
+                    <th>Delite</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of usersData;index as i">
+                    <th>{{i+1}}</th>
+                    <th>{{user.login}}</th>
+                    <th>{{user.pass}}</th>
+                    <th>{{user.email}}</th>
+                    <th><input type="button" class="user__list__editBtn"
+                            (click)="editUser(i)"
+                            value="Edit">
+                    </th>
+                    <th><input type="button" class="user__list__deleteBtn"
+                            (click)="deleteUser(i)" [disabled]="statusBtn"
+                            value="Delete">
+                    </th>
+                </tr>
+
+            </tbody>
+        </table>
+    </section>
+
+</main>

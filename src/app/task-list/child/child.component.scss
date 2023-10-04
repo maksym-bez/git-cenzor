@@ -1,0 +1,65 @@
+$red: rgb(252, 19, 19);
+$dark-red: rgb(155, 9, 9);
+$grey-border: rgb(189, 181, 181);
+$grey-background: rgb(207, 201, 201);
+$grey: rgb(109, 108, 108);
+$orange: rgba(255, 173, 22, 0.938);
+$dark-orange: rgb(211, 138, 2);
+$white: rgb(255, 255, 255);
+$green: rgb(15, 187, 58);
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+tr,
+th,
+td {
+  border-bottom: 1px solid $grey-border;
+  padding: 15px;
+  text-align: start;
+  font-weight: 900;
+}
+tr:hover td {
+  background-color: $grey-background;
+}
+.nameTask {
+  color: $grey;
+  font-weight: 200;
+}
+.progress {
+  color: $red;
+  font-weight: 400;
+}
+.done {
+  color: $green;
+  font-weight: 400;
+}
+.editBtn,
+.deleteBtn {
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: $orange;
+  border: 1px solid $dark-orange;
+  box-shadow: 4px 2px 1px 0px $dark-orange;
+  &:focus {
+    box-shadow: inset 1px 1px 7px 3px $dark-orange;
+    font-size: 14px;
+    box-shadow: -2px -2px 3px 1px $grey-border;
+  }
+}
+.deleteBtn {
+  background-color: $red;
+  border: 1px solid $dark-red;
+  box-shadow: 4px 2px 1px 0px $dark-red;
+  color: $white;
+  &:focus {
+    box-shadow: inset 1px 1px 7px 3px $dark-red;
+    box-shadow: -2px -2px 3px 1px $grey-border;
+  }
+ &:disabled{
+    color: $grey-background;
+    font-weight: 200;
+ }
+}
