@@ -1,0 +1,171 @@
+$lightGrey: rgb(196, 195, 195);
+$pinkText: rgb(202, 6, 55);
+$blueFocus: rgb(141, 141, 223);
+$greenBtn: rgb(46, 128, 46);
+$greenDark: rgb(35, 116, 35);
+$whiteColor: rgb(255, 255, 255);
+$orange-btn: rgb(255, 165, 0);
+$dark-orange: rgb(211, 138, 3);
+$red-btn: rgb(245, 38, 38);
+$dark-red: rgb(190, 31, 31);
+$background-modal: rgba(0, 0, 0, 0.397);
+$blue-btn: rgb(67, 67, 223);
+$dark-blue: rgb(58, 58, 187);
+
+%btn-list {
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.search {
+  width: 70%;
+  position: fixed;
+  background-color:white;
+  top: 0px;
+  left: 15%;
+  &__form {
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__input {
+    cursor: text;
+    width: 85%;
+    height: 40px;
+    border: 1px solid $lightGrey;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    &:focus {
+      outline: 1px solid $blueFocus;
+      box-shadow: 0 0 8px 0 $blueFocus;
+    }
+  }
+  &__btnAdd {
+    width: 14%;
+    height: 38px;
+    border-radius: 5px;
+    background-color: $greenBtn;
+    border: 1px solid $greenBtn;
+    color: $whiteColor;
+    font-size: 15px;
+    &:focus {
+      outline: 1px solid $greenDark;
+      box-shadow: 0 0 8px 0 $greenDark;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: $greenDark;
+    }
+  }
+}
+
+.phoneBook {
+  margin: 150px auto;
+  width: 70%;
+  height: 5000px;
+  &__editBtn {
+    background-color: $orange-btn;
+    border: 2px solid $dark-orange;
+    @extend %btn-list;
+    &:focus {
+      box-shadow: inset 0 0 12px 2px $dark-orange;
+      box-shadow: 0 0 8px 2px $dark-orange;
+    }
+  }
+  &__deleteBtn {
+    @extend %btn-list;
+    background-color: $red-btn;
+    border: 2px solid $dark-red;
+    color: $whiteColor;
+    &:focus {
+      box-shadow: inset 0 0 12px 2px $dark-red;
+      box-shadow: 0 0 8px 2px $dark-red;
+    }
+  }
+  &__del-ed {
+    padding-left: 30px;
+  }
+}
+table,
+tr,
+th,
+td {
+  text-align: start;
+  border-top: 1px solid $lightGrey;
+  border-bottom: 1px solid $lightGrey;
+  border-collapse: collapse;
+  padding: 20px 10px;
+  font-size: 20px;
+}
+table {
+  width: 100%;
+}
+th,
+td {
+  width: 20%;
+}
+tr:hover{
+  background-color: $lightGrey;
+}
+//Modal block create
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $background-modal;
+  z-index: 3;
+  &__window {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    margin: 100px auto;
+    background-color: $whiteColor;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 3px $lightGrey;
+    padding: 20px;
+  }
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+  }
+  &__form {
+    margin: 20px 0;
+    padding: 20px 0;
+    border-top: 2px solid $lightGrey;
+    border-bottom: 2px solid $lightGrey;
+  }
+  &__input {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 20px;
+    cursor: text;
+    border: 1px solid $lightGrey;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    &:focus {
+      outline: 1px solid $blueFocus;
+      box-shadow: 0 0 8px 0 $blueFocus;
+    }
+  }
+  &__btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: $blue-btn;
+    border: 2px solid $dark-blue;
+    color: $whiteColor;
+    &:focus {
+      box-shadow: inset 0 0 12px 2px $dark-blue;
+      box-shadow: 0 0 8px 2px $dark-blue;
+    }
+  }
+}

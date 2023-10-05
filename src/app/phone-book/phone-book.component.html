@@ -1,0 +1,76 @@
+<section class="search">
+    
+    
+    <div class="search__form">
+        <input type="text" [(ngModel)]="field"
+            class="search__input" placeholder="Search text goes here ">
+        <button class="search__btnAdd" (click)="AddPhone()">add phone</button>
+    </div>
+ </section>
+
+<section class="phoneBook">
+    <table>
+        <thead>
+            <th (click)="firstSort()">First Name
+                <span *ngIf="hideF" [textContent]="sortF ? '&#11165;' :
+                    '&#11167;'"></span>
+            </th>
+
+            <th (click)="lastSort()"><span>Last Name</span>
+                <span *ngIf="hideL" [textContent]="sortL ? '&#11165;' :
+                    '&#11167;'"></span>
+            </th>
+
+            <th (click)="phoneSort()">Phone Number
+                <span *ngIf="hideP" [textContent]="sortP ? '&#11165;' :
+                    '&#11167;'"></span>
+            </th>
+
+            <th class="phoneBook__del-ed">edit</th>
+            <th class="phoneBook__del-ed">delete</th>
+
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let item or phoneBook | search:field |sortFirst:sortF |
+                sortLast:sortL | sortPhone:sortP ;index as i">
+                <td>{{item.firstN }}</td>
+                <td>{{item.lastN}}</td>
+                <td>{{item.phoneN}}</td>
+                <td><button class="phoneBook__editBtn" (click)="editBtn(i)">
+                        edit</button></td>
+                <td><button class="phoneBook__deleteBtn"
+                        (click)="deleteUser(i)">
+                        delete</button></td>
+
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section *ngIf="modal" class="modal">
+    <div class="modal__window">
+        <h1 class="modal__text">Add phone</h1>
+        <div class="modal__close" (click)="closeModal()"><i class="uil
+                uil-multiply"></i></div>
+        <div class="modal__form">
+
+            <input type="text" [(ngModel)]="newContact.firstN"
+                class="modal__input"
+                [style.borderColor]="!isColor ? 'rgb(196, 195, 195)' : 'red' "
+                placeholder="First name goes here">
+
+            <input type="text" [(ngModel)]="newContact.lastN"
+                class="modal__input"
+                [style.borderColor]="!isColor ? 'rgb(196, 195, 195)' : 'red' "
+                placeholder="Last name goes here">
+
+            <input type="text" [(ngModel)]="newContact.phoneN"
+                class="modal__input"
+                [style.borderColor]="!isColor ? 'rgb(196, 195, 195)' : 'red' "
+                placeholder="Number name goes here">
+
+        </div>
+        <button class="modal__btn" (click)="saveModal()">Save</button>
+    </div>
+</section>
