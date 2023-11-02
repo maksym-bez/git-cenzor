@@ -1,0 +1,41 @@
+@import '../../shared/style/base';
+@import '../../shared/style/variable';
+
+header{
+    width: 100%;
+    height: 100px;
+    background-color: $headerBg;
+    padding: 20px;
+    border-bottom:1px solid $borderCol;
+}
+div{
+    width: 610px;
+    height: 50px;
+    margin: 0px auto;
+    position: relative;
+  }
+  #textAnimaion{
+    display:inline-block;
+    font-size:40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    position:relative;
+    -webkit-text-stroke:2px $headerText;
+    color:transparent;
+    
+  }
+  #textAnimaion:after{
+    content:attr(data-text-anim);
+    position:absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    overflow:hidden;
+    color:   $headerText;
+    animation:textAnimaions 3s ease-out infinite;
+  }
+  @keyframes textAnimaions{
+    0%{width: 0%;}
+    100%{width: 120%;}
+  }
+ 

@@ -1,0 +1,25 @@
+{
+    "blogs": [
+      {
+        "title": "Title 1",
+        "text": "some text 1",
+        "author": "IVAN",
+        "img": "../../../assets/photo.jpg",
+        "id": 1
+      },
+      {
+        "title": "Title 2",
+        "text": "Components shouldn't fetch or save data directly and they certainly shouldn't knowingly present fake data. They should focus on presenting data and delegate data access to a service.",
+        "author": "Petro petriv",
+        "img": "../../../assets/photo.jpg",
+        "id": 2
+      },
+      {
+        "title": "title 3",
+        "text": "Some text",
+        "author": "Solomia",
+        "img": "../../../assets/photo.jpg",
+        "id": 3
+      }
+    ]
+  }

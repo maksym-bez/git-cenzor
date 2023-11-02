@@ -1,0 +1,45 @@
+@import "../../shared/style/base";
+@import "../../shared/style/variable";
+
+.navBar {
+  display: flex;
+  width: 100%;
+  height: 70px;
+  list-style: none;
+  margin-top: 10px;
+  &__a {
+    display: block;
+    width: 100px;
+    height: 60px;
+    text-decoration: none;
+    font-size: 22px;
+    text-align: center;
+    line-height: 60px;
+    color: $blueCol;
+    border-bottom: 1px solid $borderCol;
+  }
+  &__empt {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid $borderCol;
+  }
+}
+.active {
+  border-left: 1px solid $borderCol;
+  border-top: 1px solid $borderCol;
+  border-right: 1px solid $borderCol;
+  border-bottom: none;
+  border-radius: 5px;
+  color: $greenCol;
+}
+.text {
+  width: 200px;
+  color: $headerText;
+}
+.home {
+  width: 220px;
+  color: $redCol;
+}
+.empt {
+  width: 100wv;
+}

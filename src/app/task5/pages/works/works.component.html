@@ -1,0 +1,28 @@
+<div class="works">
+    <ul class="navBar" >
+    
+        <li class="navBar__li">
+            <a class="navBar__a text">Last Works >>></a>
+        </li>
+    
+        <li class="navBar__li">
+            <a [routerLink]="[ '/works/cenzor' ]" routerLinkActive="active"class="navBar__a" >Cenzor</a>
+        </li>
+        <li class="navBar__li">
+            <a [routerLink]="[ '/works/userlist' ]" routerLinkActive="active"class="navBar__a"  >User</a>
+        </li>
+        <li class="navBar__li">
+            <a [routerLink]="[ '/works/tasklist' ]" routerLinkActive="active"class="navBar__a" >Task</a>
+        </li>
+        <div class="navBar__empt"></div>
+        <li class="navBar__li">
+            <a [routerLink]="[ '/home' ]" routerLinkActive="active" class="navBar__a home">Back to >>> Home  </a>
+        </li>
+       </ul>
+       
+    
+    
+    </div>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
